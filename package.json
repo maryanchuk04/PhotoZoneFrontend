@@ -56,6 +56,7 @@
     "rimraf": "2.6.2"
   },
   "scripts": {
+    "rimraf": "./node_modules/rimraf/bin.js",
     "start": "rimraf ./build && react-scripts start",
     "build": "CI=false && react-scripts build",
     "test": "react-scripts test --env=jsdom",
