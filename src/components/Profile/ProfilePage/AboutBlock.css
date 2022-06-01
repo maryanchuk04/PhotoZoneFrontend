@@ -1,0 +1,138 @@
+.about_block{
+    width: 100%;
+    margin: 40px 0 ;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 30px 0;
+}
+
+.about_block .title{
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.about_info{
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+.about_info .main_info{
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    background: #eee;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+.main_info h2{
+    color : #555555;
+    font-size: 24px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+
+}
+.main_info .information{
+    display: flex;
+    flex-direction: column;
+    margin:20px 50px;
+    border-right: 0;
+    border-left: 0;
+}
+.information .section{
+    display: block;
+}
+
+.information .section h2{
+    display: block;
+    color: black;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+
+
+}
+.information .section h3 {
+    color: #9b8181;
+    font-size: 18px;
+    margin: 0;
+}
+.information .section .section_with_icon{
+    display: flex;
+    align-items: center;
+}
+.about_info .other{
+    width: 60%;
+    height: 100%;
+    margin: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.other .other_information{
+    width: 100%;
+    height: 50%;
+    /*margin: 0 20px 20px 20px;*/
+    background: #eee;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+.other_information h2{
+    color : #555555;
+    font-size: 24px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.other_information .other_info_intro{
+
+}
+.other_info_intro .profile_socials{
+    margin: 0 20px;
+    padding: 0;
+}
+.other_info_intro .profile_socials h2{
+    display: block;
+    color: black;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.other_info_intro .profile_socials p{
+    color: #9b8181;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+.other .friends_about{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+
+.friends_about .some_friends{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    place-items: center;
+
+
+}
+.friends_about h2{
+    color : #555555;
+    font-size: 24px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.some_friends .one_friend{
+
+}
+.one_friend .one_fr_intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

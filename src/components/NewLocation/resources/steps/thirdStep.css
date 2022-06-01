@@ -1,0 +1,9 @@
+.image_part{
+    height: inherit;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-gap: 20px;
+}
+.image_part .main_image{
+ padding: 0 20px;
+}

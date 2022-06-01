@@ -1,0 +1,25 @@
+.location_part{
+    height: inherit;
+    display: grid;
+    grid-template-rows: 25% 73%;
+    grid-gap: 2%;
+}
+.location_part .location_display_block{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+.location_display_block .leaflet-container{
+    margin : 0;
+    width: 100%;
+    height: 100%;
+}
+
+.location_part .location_info_block{
+    display: flex;
+    align-items: center;
+}
+.location_info_block .MuiFormControl-root {
+    width: 100%;
+}

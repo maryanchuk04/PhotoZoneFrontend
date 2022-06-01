@@ -1,0 +1,32 @@
+.aboutUs .about_container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100%;
+}
+.aboutUs{
+    height: 100%;
+}
+.aboutUs h1{
+    text-align: center;
+    margin: 20px 0;
+}
+.aboutUs .about_container .image{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.about_container .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about_container .information p{
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: justify;
+    text-indent: 20px;
+}

@@ -1,0 +1,51 @@
+.bar{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    position: relative;
+}
+
+.bar img{
+    max-height: 5vh;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.bar .css-1t29gy6-MuiToolbar-root{
+    position: absolute;
+}
+
+.logout{
+    display: flex;
+    z-index: 2;
+    margin: 0 auto;
+    margin-bottom:40px;
+}
+.logout #logout_button{
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 20px ;
+    border:0;
+    color: rgb(58, 51, 51);
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 40px auto;
+}
+
+.avatar{
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    border : 2px ;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+.avatar h2{
+    margin-right: 10px;
+}
+
+.MuiDrawer-paper{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}

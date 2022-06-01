@@ -1,0 +1,153 @@
+.profileContainer{
+    width: 80%;
+    margin: 20px auto;
+    
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    grid-gap: 30px;
+    color : 
+}
+
+
+
+.profileContainer .rightblock {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    height: 100%;
+}
+
+
+
+/*Avatar*/
+.avatarBlock{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.avatarBlock .ava{
+    height: 300px;
+    width: 300px;
+    margin: auto auto;
+
+}
+.avatarBlock .photo{
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/*GeneralInfo*/
+ .generalInfo{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    text-align: left;
+}
+.generalInfo .generalInfoContainer{
+    width: 90%;
+    margin: 0 auto;
+}
+.generalInfo .generalInfoContainer .editfield{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+    padding: 10px 0;
+    height: fit-content;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    text-align: left;
+}
+ .generalInfo .generalInfoContainer .editfield .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.generalInfo .inline{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.generalInfo h3{
+    text-align: left;
+}
+
+.generalInfoContainer .editfield .othe{
+    margin: 30px 0;
+    width: 100%;
+}
+
+.generalInfo .generalInfoContainer .editfield .changeEmail{
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.editfield .changePassword  button{
+    margin-top: 10px;
+}
+.editfield .changeEmail button {
+    margin-top: 10px;
+}
+
+.generalInfo .generalInfoContainer .editfield .changePassword{
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+}
+
+
+/*Socials*/
+
+.socials{
+    width: 100%;
+
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.socials .social_line{
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    
+}
+.social_line .icon{
+    width: fit-content;
+    height: 100%;
+    margin: 0 20px;
+}
+.social_line .icon img{
+    width: 100%;
+    height: 100%;
+}
+.socials .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 70%;
+}
+.socials .btns{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.btns button {
+    margin: 0 5px;
+}
+
+
+
+.all .spinner{
+    display: flex;
+    margin: auto auto;
+    height: 90%;
+}

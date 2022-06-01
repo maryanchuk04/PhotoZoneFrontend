@@ -1,0 +1,11 @@
+.support .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    height: 100%;
+}
+.support{
+    height: 70vh;
+    margin: auto 0;
+}

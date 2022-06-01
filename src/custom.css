@@ -1,0 +1,36 @@
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh; 
+}
+.leaflet-container{
+    height: 94vh;
+}
+
+*{
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+   
+}
+a{
+    cursor: pointer;
+    text-decoration: none !important;
+    color : white ;
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    min-height: 100vh;
+}
+body{
+    min-height: 100%;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}

@@ -1,0 +1,29 @@
+.popup_component{
+    width:150px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.popup_component .title{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.popup_component .image{
+    width: 100%;
+    height: 100px;
+    
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.popup_component .rating{
+    display: flex;
+    justify-content: center;
+    
+}

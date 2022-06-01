@@ -1,0 +1,31 @@
+#myLocationButton{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 110px;
+    bottom: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
+#myLocationButton:hover{
+    transform: scale(1.01);
+    transition: 0.5s;
+}
+
+#myLocationButton i{
+    font-size: 20px;
+    color: black;
+}
+
+#myLocationButton:hover i{
+    font-size: 20px;
+    color: blue;
+}
+
+
+

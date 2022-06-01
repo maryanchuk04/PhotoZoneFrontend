@@ -1,0 +1,115 @@
+.form_newLocation{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 100%;
+
+    margin: 100px auto;
+}
+.form_newLocation .title{
+    height: 35%;
+}
+.form_newLocation .title .title_form{
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.form_newLocation .stepper{
+    margin: 0 auto;
+}
+.form_info .done{
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+.done img{
+    height: 100%;
+    width: 100%;
+}
+.title .title_form img{
+    height: 100px;
+}
+
+.form_newLocation .form_info{
+    width: 85%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.form_info .info{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.form_info .main_info_form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    height: 340px;
+}
+
+.main_info_form .main_info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: auto;
+}
+.main_info .MuiFormControl-root{
+    width: 100%;
+}
+
+.main_info_form .main_image{
+    width: 100%;
+    height: inherit;
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+.main_image .image{
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='23' ry='23' stroke='%23333' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='41' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 23px;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+.image .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.main_image .image img{
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+}
+.main_image .main_upload_image{
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_upload_image label{
+    margin-left: 10px;
+}
+
+
+
+.rating p{
+    font-size: 20px;
+}
+
+
+.form_newLocation .navigate_buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
