@@ -7,7 +7,7 @@ import { styled } from '@mui/material/styles';
 import { uploadImage } from '../../../../Services/ImageUploader'
 import CloseIcon from '@mui/icons-material/Close';
 
-const FirstSteps = ({NewLocationObject}) => {
+const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainImage, userName,title,description,rating,mainImage}) => {
     
 
 
@@ -22,6 +22,7 @@ const FirstSteps = ({NewLocationObject}) => {
         setFile(files);
         const res = await uploadImage(files);
         setImage(res);
+        setMainImage(res);
     } 
 
   const [image, setImage] = useState(defaultImage);
@@ -33,9 +34,6 @@ const FirstSteps = ({NewLocationObject}) => {
      setImage(defaultImage)
  }
 
-
- 
-
   return (<>
     <form className="main_info_form" >
         <div className="main_info">
@@ -44,7 +42,9 @@ const FirstSteps = ({NewLocationObject}) => {
                 label="UserName"
                 variant="filled"
                 sx ={{width: 220}}
+                defaultValue = {userName || ""}
                 required
+                onChange = {(e)=>setUserName(e.target.value)}
             />
             <TextField
                 id="filled-textarea"
@@ -54,6 +54,8 @@ const FirstSteps = ({NewLocationObject}) => {
                 variant="filled"
                 sx ={{width: 220, marginTop : "10px"}}
                 required
+                defaultValue = {title || ""}
+                onChange = {(e)=>setTitle(e.target.value)}
             />
             <TextField
                 id="filled-multiline-static"
@@ -62,12 +64,16 @@ const FirstSteps = ({NewLocationObject}) => {
                 rows={3}
                 variant="filled"
                 sx ={{width: 220,marginTop : "10px"}}
+                defaultValue = {description || ""}
+                onChange = {(e)=>setDescription(e.target.value)}
             />
             <div className="rating">
             <p>Rating</p>
             <Rating
+                defaultValue = {rating || ""}
                 name="simple-controlled"
                 onChange={(event, newValue) => {
+                    setRating(newValue);
                 }}
             />
         </div>
@@ -77,10 +83,9 @@ const FirstSteps = ({NewLocationObject}) => {
                 <div className="close">
                     <IconButton color="primary" aria-label="upload picture" component="span" onClick ={()=>HandleClose()}>
                         <CloseIcon />
-                    </IconButton>
-                    
+                    </IconButton> 
                 </div>
-                <img src={image} />
+                <img src={mainImage} alt = {title} />
             </div>
             <div className="main_upload_image">
                 <label htmlFor="contained-button-file">

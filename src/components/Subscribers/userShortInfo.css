@@ -1,0 +1,44 @@
+.shortInfoContainer{
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 30% 50% 1fr;
+    grid-gap: 20px;
+    padding: 5px 20px 5px 0;
+    align-items: center;
+}
+.shortInfoContainer .avatar{
+    display: flex;
+    margin: auto;
+}
+
+.shortInfoContainer .info{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.shortInfoContainer .userName{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.shortInfoContainer .fullName{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.shortInfoContainer .location{
+    display: flex;
+    font-size: 18px;
+    color : rgb(83, 82, 82);
+    align-items: center;
+}
+.shortInfoContainer .location i{
+    margin-right: 20px;
+}
+
+.shortInfoContainer .navigator_buttons{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}

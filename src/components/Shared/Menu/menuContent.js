@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import { CircularProgress } from '@mui/material'
 import { getBrowserLocation,getReverse } from '../../../Services/GeolocationService';
 
-const MenuContent = () => {
+const MenuContent = ({userInfo}) => {
     const [userLocationString,setUserLocationString] = useState("");
     const [process, setprocess] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +35,9 @@ const MenuContent = () => {
             class : "fas fa-home"
         },
         {
-            title : "Popular",
-            route : "/popular",
-            class : "fas fa-fire"
+            title : "Places",
+            route : "/places",
+            class : "fas fa-map-pin"
         },
         {
             title : "Users",
@@ -56,7 +56,7 @@ const MenuContent = () => {
         {
             isAuth() ? <>
                 <div className="userPreview">
-                    <Link to ="/profile"><Avatar alt="UserName" src="https://i.ibb.co/D1C0s8Y/2022-03-14-19-40-03.jpg" sx={{ width: 80, height: 80}} /></Link>
+                    <Link to ="/profile"><Avatar alt="UserName" src={userInfo.avatar} sx={{ width: 80, height: 80}} /></Link>
                     <p>{process ? <CircularProgress color ="success"/> : userLocationString}</p>
                 </div>
                 <List>
@@ -91,6 +91,19 @@ const MenuContent = () => {
                             </ListItem>   
                             <Divider/>
                         </Link>    
+                        <Link to = "newLocation">
+                            <ListItem disablePadding>
+                                    <ListItemButton>
+                                        <div className="itemLine">
+                                            <ListItemIcon>
+                                            <i class="fas fa-plus-circle"></i>
+                                            </ListItemIcon>
+                                            <h2>Create Location</h2>  
+                                        </div>
+                                    </ListItemButton>
+                            </ListItem>   
+                            <Divider/>
+                        </Link> 
                     </List>
                     <div className="logout">
                         <button id = "logout_button" onClick ={()=>{

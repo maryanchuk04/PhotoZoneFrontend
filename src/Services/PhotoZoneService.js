@@ -3,7 +3,8 @@ import axios from "axios";
 export const jwtStorageKey = 'token';
 
 export default class PhotoZoneService {
-    _baseUrl = 'http://localhost:5127/api/';
+    //http://localhost:5127/api/
+    _baseUrl = 'https://photozonemaks.herokuapp.com/api/';
 
     getResourceAuth = async url => {
         const call = _url => fetch(this._baseUrl + _url, {
@@ -30,36 +31,12 @@ export default class PhotoZoneService {
         })
     }
 
-    setResourceAuth = async (url, data) => {
-        const call = (url, data) => fetch(
-            this._baseUrl + url,
-            {
-                method: "post",
-                headers: new Headers({
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem(jwtStorageKey)}`
-                }),
-                body: JSON.stringify(data)
-            }
-        );
-
-        let res = await call(url, data);
-
-        if (res.status === 401) {
-            // one more try:
-            res = await call(url, data);
-        }
-
-        return res;
-    }
-
-    setResource = async (url, data) =>{
-        const call = (url, data) => axios.post(
-            this._baseUrl + url,data
-        )
-        let res = await call(url, data);
-
-        return res;
+    setResourceAuth = (_url, data) => {
+        return axios.post(this._baseUrl + _url, data, {
+            headers:{
+                'Authorization': `Bearer ${JSON.parse(localStorage.getItem(jwtStorageKey)).token}`
+            },
+        })
     }
 
     setToken = (url, data) =>{
@@ -74,6 +51,15 @@ export default class PhotoZoneService {
             return err.response
         })
        
+    }
+
+    getResourse = (_url) =>{
+        return axios.get(this._baseUrl + _url)
+    }
+
+    setResource = (_url,data) => {
+        console.log(data);
+        return axios.post(this._baseUrl + _url, data);
     }
 
 }

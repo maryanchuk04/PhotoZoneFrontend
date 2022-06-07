@@ -1,9 +1,36 @@
 .image_part{
-    height: inherit;
+    height: 90%;
     display: grid;
-    grid-template-columns: 40% 1fr;
-    grid-gap: 20px;
+    grid-template-rows : 10% 1fr;
+    grid-gap: 5px;
 }
 .image_part .main_image{
- padding: 0 20px;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.image_part .main_image button{
+    margin: 10px 0;
+}
+
+
+
+.image_part .images_List{
+    height: 90%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.images_List h1{
+    margin:  0 auto;
+}
+
+.images_List .delete{
+    position: absolute;
+    right: 3px;
+    top: 10px;
 }

@@ -9,7 +9,8 @@ import Menu from '../Shared/Menu/Menu';
 import { getBrowserLocation } from '../../Services/GeolocationService';
 import {LatLng} from "leaflet/dist/leaflet-src.esm";
 import SearchLocationButton from "../Shared/Buttons/SearchLocationButton";
-
+import ListPlaces from './ListPlaces';
+import PlaceService from '../../Services/PlaceService';
 
 
 const defaultcenter = {
@@ -18,9 +19,12 @@ const defaultcenter = {
   };
 
 const MainPage = () => {
-
+    const [loadingDistance, setLoadingDistance] = useState(false);
+    const [places, setPlaces] = useState([]);
     const [center, setcenter] = useState(defaultcenter)
     const [isOpen,setIsOpen] = useState(false);
+
+    let service = new PlaceService();
 
     const setCurrentLocation =(center2) =>{
            setcenter({
@@ -34,6 +38,12 @@ const MainPage = () => {
             setcenter(curLocation);
         }).catch((defaultcenter) => {
             setcenter(defaultcenter);
+            setLoadingDistance(false);
+        })
+        service.getAllPlaces().then((res)=>{
+          console.log(res.data);
+          setPlaces(res.data);
+        
         })
     },[])
 
@@ -49,13 +59,13 @@ const MainPage = () => {
     <div>
 
           <div className = "maps_container">
-            <Map center = {center} whenCreated={map} />
+            <Map center = {center} whenCreated={map} places = {places}/>
               <ButtonMyLocation currentLocation = {center} setCurrentLocation ={setCurrentLocation} />
               <Link to = '/newlocation'><ButtonsAddNewLocation/></Link>
           </div>
 
-            <SearchLocationButton/>
-        </div>
+          <ListPlaces  places = {places} center ={center} loading = {loadingDistance}/>
+    </div>
   )
 }
 

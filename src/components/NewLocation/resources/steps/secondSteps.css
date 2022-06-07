@@ -1,5 +1,5 @@
 .location_part{
-    height: inherit;
+    height: 500px;
     display: grid;
     grid-template-rows: 25% 73%;
     grid-gap: 2%;

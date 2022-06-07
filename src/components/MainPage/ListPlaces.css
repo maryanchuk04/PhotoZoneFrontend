@@ -1,0 +1,30 @@
+.places_list{
+    position: absolute;
+    width: 400px;
+    height: 60vh;
+    top:10vh;
+    right: 30px;
+    border-radius: 30px;
+    background-color: rgba(255,255, 255, 0.8);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+.places_list .placesListContainer{
+    margin: 20px auto;
+    width: 90%;
+    height: 95%;
+}
+
+.places_list .placesListContainer .title{
+    height: 10%;
+}
+
+
+.places_list .placesListContainer .list{
+    overflow: scroll;
+    height: 90%;
+}
+.places_list div::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+

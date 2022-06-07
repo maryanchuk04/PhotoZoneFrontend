@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const GEOCODE_URL = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&langCode=EN&location=";
 
 
@@ -36,4 +38,17 @@ export async function getReverseInDetale(center){
     console.log(data.address);
     const addressLabel = (data.address !== undefined) ? data.address.LongLabel : "Unknown";
     return addressLabel;
+}
+
+
+export function calcDistance(p1, p2){  	
+    var R = 6371; 
+    var rlat1 = p1.lat * (Math.PI/180);
+    var rlat2 = p2.lat * (Math.PI/180); 
+    var difflat = rlat2-rlat1;
+    var difflon = (p2.lng-p1.lng) * (Math.PI/180); 
+
+    var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
+    console.log(d)
+    return d.toFixed(2);
 }

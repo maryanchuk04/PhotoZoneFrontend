@@ -19,7 +19,9 @@ const Socials = () => {
     }   
 
   return (
+<div className="profileEdit">
     <div className ="socials">
+        
         <h1 style ={{textAlign:"center"}}>User Socials</h1>
         <div className="social_line">
             <div className="icon">
@@ -50,6 +52,7 @@ const Socials = () => {
             <Button variant="contained">Save</Button>
         </div>
         
+    </div>
     </div>
   )
 }

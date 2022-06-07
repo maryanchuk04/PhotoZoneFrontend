@@ -2,12 +2,13 @@
     min-width: 300px;
     height: 100%;
     max-width: 300px;
+    background-color: #7895FE;
 }
 
 .sidebarInfo .itemLine{
     display: flex;
     align-items: center;
-    color : #707070;
+    color : #ffffff;
     text-transform: uppercase;
     margin: 5px 0;
 }
@@ -28,7 +29,7 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 20px 10px;
-    background-image: url("https://habrastorage.org/webt/5c/03/bf/5c03bfa0bacd1626083107.png");
+    background-image: url("https://images.squarespace-cdn.com/content/v1/567819fddf40f37eb3667896/1539697794394-4SWIZE76Q3TP7HPF2SKT/whalte+tail.jpg?format=2500w");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -43,4 +44,9 @@
     font-size: 22px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     margin-top: 5px;
+}
+
+.sidebarInfo .MuiListItemIcon-root{
+    color : white;
+    font-size: 26px;
 }

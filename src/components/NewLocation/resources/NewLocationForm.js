@@ -8,20 +8,24 @@ import FirstSteps from './steps/firstSteps';
 import {Box, Typography,} from '@mui/material'
 import SecondSteps from './steps/secondSteps';
 import ThirdSteps from './steps/thirdSteps';
+import PlaceService from '../../../Services/PlaceService';
+import { useNavigate } from 'react-router';
 
 const NewLocationForm = (props) => {
-    const NewLocationObject = {
-        userName : "",
-        title : "",
-        description : "",
-        rating : 0,
-        images : [],
-        location : {
-            lng : 0,
-            lat : 0,
-            locationString : ""
-        },
-    }
+    let placeService = new PlaceService();
+    let navigate = new useNavigate();
+    const [userName, setUserName] = useState('');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState("");
+    const [rating, setRating] = useState(0);
+    const [mainImage, setMainImage] = useState("");
+    const [images, setImages] = useState([]);
+    const [location, setLocation] = useState({
+        latitude : 0,
+        longitude : 0,
+        locationString : ""
+    });
+
     const steps = [
         'Main information',
         'Location information',
@@ -71,8 +75,22 @@ const NewLocationForm = (props) => {
         });
       };
     
-      const handleReset = () => {
-        setActiveStep(0);
+      const handleSubmit = () => {
+          const data = {
+              title : title,
+              owner : "32a25eb5-f3d3-4fab-8e40-f3edde1d9e7b",
+              mainImage : mainImage,
+              images : images,
+              rating : rating,
+              location : location,
+              description : description
+          }
+        placeService.createNewPlace(data).then((res)=>{
+            console.log(res.data);
+            if(res.status === 200){
+                navigate(`/places/${res.data}`);
+            }
+        })
       };
     return(
             <div className="form_newLocation">
@@ -93,7 +111,7 @@ const NewLocationForm = (props) => {
                     </div>
                 </div>
                 <>
-                    <div className ="form_info">
+                    <div className ="form_info" >
                         
                         {/*  */}
                         {activeStep === steps.length-1 ? (
@@ -102,11 +120,15 @@ const NewLocationForm = (props) => {
                             </div>     
                                 ) : (
                                     activeStep ===0 ?
-                                        <FirstSteps NewLocationObject ={NewLocationObject}/>  
+                                        <FirstSteps setUserName = {setUserName} setTitle = {setTitle} setDescription = {setDescription}
+                                            setRating = {setRating} setMainImage = {setMainImage}
+                                            userName ={userName} title = {title} description = {description}
+                                            rating = {rating} mainImage ={mainImage}
+                                        />  
                                     : activeStep===1  ? 
-                                        <SecondSteps NewLocationObject ={NewLocationObject}/>
+                                        <SecondSteps setLocation = {setLocation} location = {location}/>
                                     : activeStep===2 ?
-                                        <ThirdSteps NewLocationObject = {NewLocationObject}/>
+                                        <ThirdSteps setImages = {setImages} images = {images}/>
                                     :<></>
                         )}
                         <div className="navigate_buttons">
@@ -119,8 +141,8 @@ const NewLocationForm = (props) => {
                            Back
                            </Button>
                            <Box sx={{ flex: '1 1 auto' }} />
-                           <Button onClick={activeStep === steps.length-1 ? handleReset : handleNext}>
-                           {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                           <Button type ='submit' onClick={activeStep === steps.length-1 ? handleSubmit : handleNext}>
+                                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                            </Button>
                         </div>
                         {/*  */}

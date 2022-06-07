@@ -1,23 +1,24 @@
 import React from 'react'
-import { places } from '../Test'
 import './PlaceComponent.css';
 import { Rating } from '@mui/material';
 import { Link } from 'react-router-dom';
-const PlaceComponent = () => {
-    const place = places[0];
+const PlaceComponent = ({place}) => {
+    
   return (
-    <Link to = {`place/${place.Id}`}>
+    <Link to = {`place/${place.id}`}>
     <div className ='popup_component'>
         <div className="title">
-            <h2>{place.Title}</h2>
+            <h2>{place.title}</h2>
         </div>
         <div className="image">
-            <img src={place.Image} alt={place.Title} />
+            <img src={place.mainImage} alt={place.title} />
         </div>
         <div className="rating">
             <Rating
                 name="simple-controlled"
-                value={place.Rate}    
+                value={place.rating}    
+                readOnly
+            
             />
         </div>
         

@@ -109,12 +109,12 @@
 
 /*Socials*/
 
-.socials{
+.profileEdit .socials{
     width: 100%;
-
+    height: 100%;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.socials .social_line{
+.profileEdit .socials .social_line{
     height: 45px;
     display: flex;
     align-items: center;

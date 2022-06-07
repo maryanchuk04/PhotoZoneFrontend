@@ -15,6 +15,7 @@ import { Divider, Avatar } from '@mui/material';
 import { isAuth } from '../../../Services/SharedFunctions';
 import { Link } from 'react-router-dom';
 import { Navigate, useNavigate } from 'react-router';
+import UserService from '../../../Services/UserService';
 
 
 const drawerWidth = "fit-content";
@@ -22,7 +23,9 @@ const drawerWidth = "fit-content";
 const NewMenu = () => {
     const [sidebar, setSidebar] =useState(false);
     let navigate = useNavigate();
-    
+      let service = new UserService();
+      const [user,setUser] =  useState({});
+
       const DrawerHeader = styled("div")(({ theme }) => ({
         display: "flex",
         alignItems: "center",
@@ -32,6 +35,16 @@ const NewMenu = () => {
         justifyContent: "flex-end"
       }));
     const theme = useTheme();
+
+    useEffect(()=>{
+      if(isAuth()){
+        service.GetCurrentUserInfo().then((res)=>{
+          setUser(res.data);
+          console.log(res.data);
+        });
+      }
+    },[])
+
 
   return (
       <>
@@ -55,21 +68,24 @@ const NewMenu = () => {
             <img src="https://see.fontimg.com/api/renderfont4/5Y58/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiI0ZGRkZGRiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/UGhvdG9ab25l/vegan-style-personal-use.png" alt="" onClick={()=>navigate('/')} />
         </div>
         {isAuth() ? 
-              <Link to = '/profile' className="avatar">
-                <h2>MaksMaryanchuk</h2>
-                <Avatar src  ={"https://i.ibb.co/D1C0s8Y/2022-03-14-19-40-03.jpg"} sx ={{height : "4vh", width : "4vh"}}/> 
+              <Link to = '/profile' className="avatarHeader">
+                <h2>{user.userName}</h2>
+                <Avatar src  ={user.avatar} sx ={{height : "4vh", width : "4vh"}}/> 
               </Link>
               : <></>
             }
     </AppBar>
     <Drawer sx={{
+          border: "0",
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box"
-          }
+          },
+          
         }}
+        
         variant="persistent"
         anchor="left"
         open={sidebar}>
@@ -83,7 +99,7 @@ const NewMenu = () => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-      <MenuContent/>
+      <MenuContent userInfo = {user}/>
 
 
     </Drawer>

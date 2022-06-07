@@ -13,6 +13,7 @@ import NewMenu from './components/Shared/Menu/NewMenu.js';
 import Profile from './components/Profile/ProfileWithEditing/profile.js';
 import { isAuth } from './Services/SharedFunctions.js';
 import { useNavigate } from 'react-router';
+import SubscribersPage from './components/Subscribers/SubscribersPage.js';
 
 function App() {
 
@@ -23,12 +24,13 @@ function App() {
              <NewMenu/>
               <Routes>
                 <Route path ="/" exact element = {<MainPage/>}/>
-                <Route path ="/profilepage/:id" exact element ={<React.Fragment><ProfilePage/><Footer/></React.Fragment>}/>
+                <Route path ="/userspages/:id" exact element ={<React.Fragment><ProfilePage/><Footer/></React.Fragment>}/>
                 <Route path = '/profilepage/favourite' exact element ={<React.Fragment><ProfileFavourite/><Footer/></React.Fragment>}/>
                 <Route path = '/newlocation' exact element = {<React.Fragment><NewLocationPage/><Footer/> </React.Fragment>}/>
                 <Route path = '/auth/user' exact element = {<React.Fragment><Footer/></React.Fragment>}/>
                 <Route path ='/support' exact element ={<React.Fragment><SupportPage/> <Footer/></React.Fragment>}/>
                 <Route path ="profile" exact element ={<React.Fragment><Profile/><Footer/></React.Fragment>}/> 
+                <Route path ="/subscribers" exact element ={<React.Fragment><SubscribersPage/><Footer/></React.Fragment>}/>
                 
               </Routes>
             </div>
