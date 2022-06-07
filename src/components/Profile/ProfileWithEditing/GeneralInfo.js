@@ -23,6 +23,7 @@ const GeneralInfo = ({userData}) => {
                     id="demo-helper-text-misaligned"
                     label="User name"
                     defaultValue ={userData.userName}
+                    sx={{width : "100%"}}
                 />
                 </div>
                 <div className="editfield">
@@ -30,6 +31,7 @@ const GeneralInfo = ({userData}) => {
                     id="demo-helper-text-misaligned"
                     label="Full name"
                     defaultValue = {userData.fullName}
+                    sx={{width : "100%"}}
                 />
                 </div>
             </div>
@@ -40,6 +42,7 @@ const GeneralInfo = ({userData}) => {
                         id="demo-helper-text-misaligned"
                         label="Phone number"
                         defaultValue = {userData.phone}
+                        sx={{width : "100%"}}
                         />
                 </div>
                 <div className="editfield">
@@ -55,7 +58,8 @@ const GeneralInfo = ({userData}) => {
                                 onChange={(newValue) => {
                                     setDate(newValue);
                                 }}
-                                renderInput={(params) => <TextField {...params} />}
+                                renderInput={(params) => <TextField {...params}
+                                sx={{width : "100%"}} />}
                             />
                         </LocalizationProvider>
                 </div>
@@ -66,6 +70,7 @@ const GeneralInfo = ({userData}) => {
                         <Select
                             labelId="demo-multiple-name-label"
                             id="demo-multiple-name"
+                            
                             sx ={{width : "100%"}}
                             defaultValue ={userData.gender}       
                             >
@@ -83,6 +88,7 @@ const GeneralInfo = ({userData}) => {
                             multiline
                             rows={10}
                             defaultValue ={userData.hobby}
+                            sx={{width : "100%"}}
                             />
 
                         </div>
@@ -97,6 +103,7 @@ const GeneralInfo = ({userData}) => {
                             label="Email Address"
                             type ='email'
                             defaultValue ={userData.email}
+                            sx={{width : "100%"}}
                             />
                             <Button variant="contained">Change Email</Button>
                         </div>
@@ -106,11 +113,13 @@ const GeneralInfo = ({userData}) => {
                             id="demo-helper-text-misaligned"
                             label="Password"
                             type ='password'
+                            sx={{width : "100%", margin : "10px 0"}}
                             />
                             <TextField
                             id="demo-helper-text-misaligned"
                             label="Confirm Password"
                             type ='password'
+                            sx={{width : "100%", margin : "10px 0"}}
                             />
                             {/* Open Modal with input numbers for confirm this from post*/}
                             <Button variant="contained">Change Password</Button>
