@@ -19,10 +19,11 @@ const defaultcenter = {
   };
 
 const MainPage = () => {
-    const [loadingDistance, setLoadingDistance] = useState(false);
+    const [loadingDistance, setLoadingDistance] = useState(true);
     const [places, setPlaces] = useState([]);
     const [center, setcenter] = useState(defaultcenter)
     const [isOpen,setIsOpen] = useState(false);
+    const [locationLoad,setLocationLoad] = useState(true);
 
     let service = new PlaceService();
 
@@ -36,15 +37,14 @@ const MainPage = () => {
     useEffect(()=>{
         getBrowserLocation().then((curLocation)=>{
             setcenter(curLocation);
+            setLocationLoad(false);
+            setLoadingDistance(false);
         }).catch((defaultcenter) => {
             setcenter(defaultcenter);
-            setLoadingDistance(false);
+            setLocationLoad(false)
+            
         })
-        service.getAllPlaces().then((res)=>{
-          console.log(res.data);
-          setPlaces(res.data);
-        
-        })
+       
     },[])
 
      const onPlaceSelect = useCallback(
@@ -64,7 +64,7 @@ const MainPage = () => {
               <Link to = '/newlocation'><ButtonsAddNewLocation/></Link>
           </div>
 
-          <ListPlaces  places = {places} center ={center} loading = {loadingDistance}/>
+          <ListPlaces locationLoad ={locationLoad} center ={center} loading = {loadingDistance}/>
     </div>
   )
 }

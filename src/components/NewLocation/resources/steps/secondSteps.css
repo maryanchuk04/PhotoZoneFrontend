@@ -23,3 +23,12 @@
 .location_info_block .MuiFormControl-root {
     width: 100%;
 }
+
+@media screen and (max-width : 426px) {
+    .location_part{
+        height: 400px;
+        display: grid;
+        grid-template-rows: 20% 1fr;
+        grid-gap: 20px;
+    } 
+}

@@ -14,6 +14,8 @@ import Profile from './components/Profile/ProfileWithEditing/profile.js';
 import { isAuth } from './Services/SharedFunctions.js';
 import { useNavigate } from 'react-router';
 import SubscribersPage from './components/Subscribers/SubscribersPage.js';
+import UsersPage from './components/UsersPage/UsersPage.js';
+import PlacesPage from './components/PlacesPages/PlacesPage'
 
 function App() {
 
@@ -31,7 +33,9 @@ function App() {
                 <Route path ='/support' exact element ={<React.Fragment><SupportPage/> <Footer/></React.Fragment>}/>
                 <Route path ="profile" exact element ={<React.Fragment><Profile/><Footer/></React.Fragment>}/> 
                 <Route path ="/subscribers" exact element ={<React.Fragment><SubscribersPage/><Footer/></React.Fragment>}/>
-                
+                <Route path = "/users" exact element = {<React.Fragment><UsersPage/><Footer/></React.Fragment>} />
+                <Route path = "/places" exact element = {<React.Fragment><PlacesPage/><Footer/></React.Fragment>} />
+
               </Routes>
             </div>
             

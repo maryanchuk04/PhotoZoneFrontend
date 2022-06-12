@@ -52,7 +52,7 @@ const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainIm
                 multiline
                 rows={2}
                 variant="filled"
-                sx ={{width: 220, marginTop : "10px"}}
+                sx ={{width: "100%", marginTop : "10px"}}
                 required
                 defaultValue = {title || ""}
                 onChange = {(e)=>setTitle(e.target.value)}
@@ -63,7 +63,7 @@ const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainIm
                 multiline
                 rows={3}
                 variant="filled"
-                sx ={{width: 220,marginTop : "10px"}}
+                sx ={{width: "100%",marginTop : "10px"}}
                 defaultValue = {description || ""}
                 onChange = {(e)=>setDescription(e.target.value)}
             />

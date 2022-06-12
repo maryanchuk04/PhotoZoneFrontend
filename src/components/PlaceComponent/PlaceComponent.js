@@ -18,7 +18,6 @@ const PlaceComponent = ({place}) => {
                 name="simple-controlled"
                 value={place.rating}    
                 readOnly
-            
             />
         </div>
         

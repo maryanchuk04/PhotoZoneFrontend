@@ -30,4 +30,8 @@ export default class UserService{
     GetUsersInfoByIds = (data) => base_service.setResourceAuth("User/GetUsersInfoByIds", data);
 
     GetUserInfoById = (id) => base_service.getResourse(`User/GetUserInfoById/${id}`);
+
+    GetAllUsers = ()=> base_service.getResourse('User/GetAllUsers');
+
+    SearchUsers = (data) => base_service.setResource('User/SearchUsers', data);
 }

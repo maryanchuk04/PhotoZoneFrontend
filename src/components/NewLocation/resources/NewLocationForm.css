@@ -114,3 +114,18 @@
     justify-content: space-between;
     margin-bottom: 20px;
 }
+
+
+
+
+@media screen and (max-width : 427px) {
+    .form_info .main_info_form{
+        display: grid;
+        grid-template-columns: 35% 1fr;
+        grid-gap: 10px;
+    }
+    .rating p{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}

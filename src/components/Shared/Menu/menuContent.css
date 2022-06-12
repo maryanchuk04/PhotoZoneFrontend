@@ -29,7 +29,7 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 20px 10px;
-    background-image: url("https://images.squarespace-cdn.com/content/v1/567819fddf40f37eb3667896/1539697794394-4SWIZE76Q3TP7HPF2SKT/whalte+tail.jpg?format=2500w");
+    background-image: url("https://cdn.ceoworld.biz/wp-content/uploads/2021/03/wealthy-photographer.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -41,7 +41,8 @@
     color: rgb(255, 255, 255);
     margin: 0 auto;
     text-align: center;
-    font-size: 22px;
+
+    font-size: 24px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     margin-top: 5px;
 }

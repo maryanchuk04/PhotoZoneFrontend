@@ -1,0 +1,28 @@
+.usersPage{
+    width: 80%;
+    margin: auto;
+    min-height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.usersPage .search{
+    height: 100px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+}
+
+
+.usersPage .users{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    height: 60vh;
+    overflow: scroll;
+}
+
+.inputSearch{
+    width: 90%;
+    margin: auto !important;
+}

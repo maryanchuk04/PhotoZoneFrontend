@@ -25,3 +25,10 @@
     font-size: 30px;
     color : rgb(138, 135, 135);
 }
+
+
+@media screen and (max-width : 426px) {
+    .subscribers{
+        width: 92%;
+    }
+}

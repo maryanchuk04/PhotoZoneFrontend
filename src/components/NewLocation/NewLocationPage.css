@@ -1,5 +1,12 @@
 .new_location_container{
     width: 70%;
-    margin: 0 auto;
-    
+    margin: auto;
+}
+
+
+@media screen and (max-width : 426px) {
+    .new_location_container{
+        width: 95%;
+        margin: auto;
+    } 
 }

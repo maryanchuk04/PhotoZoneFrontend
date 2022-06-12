@@ -51,7 +51,7 @@ const Maps = (props) => {
         />
           {
             props.places?.map((place)=>
-              <Marker position={{lat: place.location.latitude, lng:place.location.longitude}}
+              <Marker position={{lat: place.location?.latitude, lng:place.location?.longitude}}
                 riseOnHover={true}
                 onDragend={updateMarker}>
                   <Popup position={{lat : place.location.latitude, lng : place.location?.longitude}}>
@@ -60,6 +60,7 @@ const Maps = (props) => {
                     </pre>
                 </Popup>
               </Marker>
+            
             ) 
           }  
               <Marker position={props.center}

@@ -56,7 +56,7 @@ const MenuContent = ({userInfo}) => {
         {
             isAuth() ? <>
                 <div className="userPreview">
-                    <Link to ="/profile"><Avatar alt="UserName" src={userInfo.avatar} sx={{ width: 80, height: 80}} /></Link>
+                    <Link to ="/profile"><Avatar alt="UserName" src={userInfo.avatar} sx={{ width: 100, height: 100, margin : "0 auto"}} /></Link>
                     <p>{process ? <CircularProgress color ="success"/> : userLocationString}</p>
                 </div>
                 <List>
