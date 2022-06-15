@@ -36,9 +36,13 @@ const MainPage = () => {
     }
     useEffect(()=>{
         getBrowserLocation().then((curLocation)=>{
+            service.getAllPlaces().then((res)=>{
+              setPlaces(res.data)
+              setLocationLoad(false);
+              setLoadingDistance(false);
+            })
             setcenter(curLocation);
-            setLocationLoad(false);
-            setLoadingDistance(false);
+           
         }).catch((defaultcenter) => {
             setcenter(defaultcenter);
             setLocationLoad(false)

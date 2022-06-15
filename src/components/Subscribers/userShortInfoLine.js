@@ -1,12 +1,30 @@
 import { Avatar } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './userShortInfo.css'
 import {Button} from '@mui/material'
 import {useNavigate} from 'react-router-dom';
+import UserService from '../../Services/UserService';
 
-const UserShortInfoLine = ({user}) => {
+const UserShortInfoLine = ({user, showButtons = true, id}) => {
     let navigate = useNavigate();
-
+    let service = new UserService();
+    const [isFollow, setFollow] = useState(true);
+    
+    useEffect(()=>{
+        service.GetCurrentUserInfo().then((res)=>{
+            console.log(res);
+            console.log(user.id)
+            res.data.subscriptions.forEach(element => {   
+                console.log(element.subscribeId); 
+                if (element.subscribeId == user.id){ 
+                    console.log("work")
+                    setFollow(false);
+                }
+            });
+            
+                
+        })
+    },[])
   return (
     <div className ={"shortInfoContainer"}>
         <div className="avatar">
@@ -19,10 +37,23 @@ const UserShortInfoLine = ({user}) => {
             {user.gender ===0 ? <p>Male</p> : <p>Female</p>}
         </div>
         <div className="navigator_buttons">
-            <Button variant="outlined" color="error" sx={{marginBottom: "10px"}} >
-                Unfollow
-            </Button>
-            <Button color="secondary" onClick={()=>navigate(`/userspages/${user.id}`)}>Profile</Button>
+            {
+                showButtons ?
+                    isFollow ? 
+                        <>
+                        <Button variant="outlined" color="error" sx={{marginBottom: "10px"}} >
+                            Unfollow
+                        </Button> 
+                        <Button color="secondary" onClick={()=>navigate(`/userspages/${user.id}`)}>Profile</Button>
+                        </>: <>
+                        <Button variant="outlined" color="success" sx={{marginBottom: "10px"}} >
+                            Follow
+                        </Button>
+                        <Button color="secondary" onClick={()=>navigate(`/userspages/${user.id}`)}>Profile</Button>
+                        </>
+                        :<></>
+            }
+            
         </div>
     </div>
   )

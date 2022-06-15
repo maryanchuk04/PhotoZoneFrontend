@@ -58,6 +58,7 @@ const Menu = () => {
             <div className="logout">
                 <button id = "logout_button" onClick ={()=>{
                     localStorage.removeItem("token");
+                    window.location = "/";
                 }}><i className="fas fa-sign-out-alt" ></i>Logout</button>
             </div>
         </div>

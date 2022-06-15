@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import {Stepper, Step, StepLabel} from "@mui/material";
 import Menu from "../../Shared/Menu/Menu";
 import './NewLocationForm.css'
@@ -10,15 +10,19 @@ import SecondSteps from './steps/secondSteps';
 import ThirdSteps from './steps/thirdSteps';
 import PlaceService from '../../../Services/PlaceService';
 import { useNavigate } from 'react-router';
+import UserService from '../../../Services/UserService';
+import { ClockLoader } from 'react-spinners';
+
 
 const NewLocationForm = (props) => {
+    
     let placeService = new PlaceService();
     let navigate = new useNavigate();
-    const [userName, setUserName] = useState('');
+    const [userName, setUserName] = useState("");
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState("");
     const [rating, setRating] = useState(0);
-    const [mainImage, setMainImage] = useState("");
+    const [mainImage, setMainImage] = useState("https://eataway.com/images/default-image.gif");
     const [images, setImages] = useState([]);
     const [location, setLocation] = useState({
         latitude : 0,
@@ -28,7 +32,7 @@ const NewLocationForm = (props) => {
 
     const steps = [
         'Main information',
-        'Location information',
+        'Location',
         'Images',
         'Complete'
     ]
@@ -78,7 +82,7 @@ const NewLocationForm = (props) => {
       const handleSubmit = () => {
           const data = {
               title : title,
-              owner : "32a25eb5-f3d3-4fab-8e40-f3edde1d9e7b",
+              owner : props.user.id,
               mainImage : mainImage,
               images : images,
               rating : rating,
@@ -88,13 +92,13 @@ const NewLocationForm = (props) => {
         placeService.createNewPlace(data).then((res)=>{
             console.log(res.data);
             if(res.status === 200){
-                navigate(`/places/${res.data}`);
+                navigate(`/place/${res.data}`);
             }
         })
       };
     return(
-            <div className="form_newLocation">
-                <div className="title">
+                <div className="form_newLocation">
+                    <div className="title">
                     <div className="title_form">
                         <img src="https://see.fontimg.com/api/renderfont4/5Y58/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzE4MDIwMiIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/TmV3IEludHJlc3RpbmcgTG9jYXRpb24/vegan-style-personal-use.png" alt=""/>
                     </div>
@@ -124,6 +128,7 @@ const NewLocationForm = (props) => {
                                             setRating = {setRating} setMainImage = {setMainImage}
                                             userName ={userName} title = {title} description = {description}
                                             rating = {rating} mainImage ={mainImage}
+                                            user = {props.user}
                                         />  
                                     : activeStep===1  ? 
                                         <SecondSteps setLocation = {setLocation} location = {location}/>
@@ -146,9 +151,11 @@ const NewLocationForm = (props) => {
                            </Button>
                         </div>
                         {/*  */}
-                    </div>
-                </>
-            </div>
+                    </div> 
+                    </> 
+                </div>
+                
+            
     )
 };
 

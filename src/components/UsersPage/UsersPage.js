@@ -16,7 +16,7 @@ const UsersPage = () => {
     userService.GetAllUsers().then(res =>{
       console.log(res);
       setUsers(res.data);
-      setLoading(false);
+       setLoading(false);
     });
   }, [])
   
@@ -40,8 +40,11 @@ const UsersPage = () => {
             <TextField variant = "outlined"  className ="inputSearch" placeholder = "Search..." onChange = {(e)=>handleSearch(e.target.value)}/>
         </div>
         <div className="users">
-          {loading ? <ClockLoader size= "150" color={"#A254FF"}/> : 
-            <UsersList users = {users}/>
+          {loading ? <div className = "loader"><ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/></div> : 
+            <div className = "userList">
+                <UsersList users = {users}/>
+            </div>
+            
           }
             
         </div>

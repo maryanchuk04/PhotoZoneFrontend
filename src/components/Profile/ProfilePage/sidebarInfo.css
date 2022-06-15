@@ -1,16 +1,19 @@
 .sidebarInfoContainer{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     width: 100%;
-    height: fit-content;
+    height: 100%;
     margin-bottom: 20px;
     overflow-y: scroll;
+    display: flex;
+
 }
 
 .sidebarInfoContainer .information_about_user{
     width: 90%;
-    height: 100%;
-    margin: 20px auto;
+    height: 80%;
+    margin: auto;
     font-size: 20px;
+    overflow: scroll;
 }
 
 

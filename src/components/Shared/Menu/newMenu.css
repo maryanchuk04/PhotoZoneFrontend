@@ -56,3 +56,8 @@
     background: #7895FE;
 
 }
+@media screen and (max-width : 426px) {
+    .bar img{
+        max-height: 4vh;
+    }
+}

@@ -1,4 +1,4 @@
-import React,{ReactFragment} from 'react';
+import React,{ReactFragment, useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import MainPage from './components/MainPage/MainPage.js';
 import Menu from "./components/Shared/Menu/Menu";
@@ -16,9 +16,20 @@ import { useNavigate } from 'react-router';
 import SubscribersPage from './components/Subscribers/SubscribersPage.js';
 import UsersPage from './components/UsersPage/UsersPage.js';
 import PlacesPage from './components/PlacesPages/PlacesPage'
+import PlacePage from './components/PlacePage/PlacePage.js';
+import { gapi } from 'gapi-script'
 
 function App() {
+  useEffect(()=>{
+    function start(){
+      gapi.client.init({
+        clientId : "898187581146-9rq8rn71544fu2r60nb2cfg0t4vi1i4l.apps.googleusercontent.com",
+        scope : ""
+      })
+    };
 
+    gapi.load('client:auth2', start);
+  },[])
     return (
       <div className = "App">
         <BrowserRouter>
@@ -35,7 +46,7 @@ function App() {
                 <Route path ="/subscribers" exact element ={<React.Fragment><SubscribersPage/><Footer/></React.Fragment>}/>
                 <Route path = "/users" exact element = {<React.Fragment><UsersPage/><Footer/></React.Fragment>} />
                 <Route path = "/places" exact element = {<React.Fragment><PlacesPage/><Footer/></React.Fragment>} />
-
+                <Route path = '/place/:id' exact element ={<React.Fragment><PlacePage/><Footer/></React.Fragment>}/>
               </Routes>
             </div>
             

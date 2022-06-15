@@ -1,15 +1,15 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { TextField,Rating } from '@mui/material'
 import '../NewLocationForm.css'
 import { Input, Button,IconButton } from '@mui/material'
 import { PhotoCamera } from '@mui/icons-material'
 import { styled } from '@mui/material/styles';
-import { uploadImage } from '../../../../Services/ImageUploader'
+import  {uploadImage } from '../../../../Services/ImageUploader'
 import CloseIcon from '@mui/icons-material/Close';
+import UserService from '../../../../Services/UserService'
 
-const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainImage, userName,title,description,rating,mainImage}) => {
+const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainImage, userName,title,description,rating,mainImage, user}) => {
     
-
 
     const defaultImage = 'https://eataway.com/images/default-image.gif';
     const Input = styled('input')({
@@ -42,7 +42,7 @@ const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainIm
                 label="UserName"
                 variant="filled"
                 sx ={{width: 220}}
-                defaultValue = {userName || ""}
+                defaultValue = {user.userName || ""}
                 required
                 onChange = {(e)=>setUserName(e.target.value)}
             />
@@ -88,12 +88,6 @@ const FirstSteps = ({setUserName, setTitle, setDescription, setRating, setMainIm
                 <img src={mainImage} alt = {title} />
             </div>
             <div className="main_upload_image">
-                <label htmlFor="contained-button-file">
-                    <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                    <Button variant="contained" component="span">
-                        Upload
-                    </Button>
-                </label>
                 <label htmlFor="icon-button-file">
                     <Input accept="image/*" id="icon-button-file" type="file" onChange = {(e)=>handleFileSelected(e)} />
                     <IconButton color="primary" aria-label="upload picture" component="span">

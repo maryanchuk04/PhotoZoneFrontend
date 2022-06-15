@@ -40,6 +40,11 @@ const Maps = (props) => {
     popupAnchor:  [-3, -76]
   });
  
+  useEffect(() => {
+    console.log(props)
+  
+    
+  }, [])
 
   return (
       props.center &&

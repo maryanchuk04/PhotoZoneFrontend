@@ -1,0 +1,174 @@
+.placePage{
+    height: fit-content;
+    min-height: 40vh;
+    margin: 40px auto;
+    width: 80%;
+
+}
+
+.onePlace{
+    
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding-bottom: 40px;
+}
+
+.onePlace .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.onePlace .title h1{
+    text-shadow: 2px 2px 3px pink;
+    color : #352994;
+    margin: 10px 0;
+}
+
+.onePlace .mainInfo{
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    width: 95%;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+
+
+.onePlace .mainInfo .gal{
+    width: 100%;
+    height: 90%;
+    margin: 20px 0;
+    margin-bottom: 40px;
+}
+
+.gal .slick-slider,.gal .slick-list,.gal .slick-track{
+    height: 100%;
+    width: 100%;
+}
+
+.onePlace .uploadNewImage{
+    width: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+
+.uploadNewImage .image{
+    width: 80%;
+    height: 300px;
+    
+    margin: 10px auto;
+    position: relative;
+}
+
+.uploadNewImage .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.uploadNewImage .image .icon{
+    position: absolute;
+    top : 5px;
+    right: 5px;
+}
+
+
+.gal .slick-track img{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.onePlace .mainInfo .info{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.onePlace .mainInfo .info .description{
+    font-size: 20px;
+    text-indent: 10px;
+}
+
+.onePlace .mainInfo .info .inline{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.onePlace .mainInfo .info .userData{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info .userData .owner{
+    font-size: 24px;
+}
+
+.onePlace .locationInfo{
+    margin: 20px 0;
+}
+
+.locationInfo .title{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.locationInfo .mapcontainer{
+    width: 100%;
+    height: 400px;
+}
+
+.mapcontainer .leaflet-container{
+    height: 100%;
+}
+
+
+.onePlace .comments{
+    margin: 30px auto;
+    width: 90%;
+    min-height: 400px;
+    height: fit-content;
+}
+
+.comments .title{
+    margin : 20px 0;
+}
+
+.onePlace .comments .writeComment{
+    display: grid;
+    grid-template-columns: 5% 75% 1fr;
+    grid-gap: 20px;
+}
+
+.onePlace .comments .listComments{
+    width: 100%;
+    border-radius : 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+    min-height: 100px;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.comment{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    
+}
+
+.comment .info{
+    display: flex;
+    flex-direction: column;
+}

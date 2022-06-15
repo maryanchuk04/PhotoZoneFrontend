@@ -21,7 +21,7 @@ const ListElement = ({element,center,loading}) => {
      setDistance(calcDistance(center, {lat : element.location.latitude, lng : element.location.longitude}))
     }, [])
     
-  return loading? <ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/> : 
+  return loading?  <div className = "loader"><ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/></div> : 
     <Link to ={`/place/${element.id}`} className = "listElement">
         <div className="information">
             <h3>{element.title}</h3>  

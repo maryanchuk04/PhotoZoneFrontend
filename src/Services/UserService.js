@@ -14,7 +14,8 @@ export default class UserService{
 
     Authentificate = data => base_service.setToken('User/Authentificate',data);
 
-    ChangeAvatar = data => base_service.setResourceAuth('User/ChangeAvatar')
+    ChangeAvatar = data => base_service.setResourceAuth('User/ChangeAvatar',data);
+
 
     Registration = data => {
         
@@ -34,4 +35,11 @@ export default class UserService{
     GetAllUsers = ()=> base_service.getResourse('User/GetAllUsers');
 
     SearchUsers = (data) => base_service.setResource('User/SearchUsers', data);
+
+    SaveUserInfo = (data)=>base_service.setResourceAuth('User/SaveUserInfo', data);
+
+    SaveSocials = (data) => base_service.setResourceAuth('User/SaveUserSocials', data);
+
+    googleLogin = (data) => base_service.setToken('User/GoogleLogin', data);
+
 }

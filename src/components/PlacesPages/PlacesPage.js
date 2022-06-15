@@ -19,6 +19,7 @@ const PlacesPage = () => {
     },[])
 
     const handleSearch = (value) =>{
+        setLoading(true);
         const data = {
             searchText : value
         }
@@ -31,12 +32,16 @@ const PlacesPage = () => {
     }
   return (
     <div className = "places">
+
         <div className="search">
             <TextField variant = "outlined"  className ="inputSearch" placeholder = "Search..." onChange = {(e)=>handleSearch(e.target.value)} />
         </div>
-        {loading ? <ClockLoader/> : 
-            <PlacesList places = {places}/>
-        }
+        <div className="placesss">
+            {/* {loading ?  <div className = "loader"><ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/></div> :  */}
+                <PlacesList places = {places} loading = {loading}/>
+            
+        </div>
+       
     </div>
   )
 }

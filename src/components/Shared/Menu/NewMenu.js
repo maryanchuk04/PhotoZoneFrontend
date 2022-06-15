@@ -16,11 +16,13 @@ import { isAuth } from '../../../Services/SharedFunctions';
 import { Link } from 'react-router-dom';
 import { Navigate, useNavigate } from 'react-router';
 import UserService from '../../../Services/UserService';
-
+import useMedia from 'use-media';
 
 const drawerWidth = "fit-content";
 
 const NewMenu = () => {
+    const media = useMedia({maxWidth : "635px"});
+
     const [sidebar, setSidebar] =useState(false);
     let navigate = useNavigate();
       let service = new UserService();
@@ -42,6 +44,7 @@ const NewMenu = () => {
           setUser(res.data);
           console.log(res.data);
         });
+        console.log(media)
       }
     },[])
 
@@ -50,7 +53,7 @@ const NewMenu = () => {
       <>
     <AppBar position="sticky" sx ={{height : "6vh", minWidth : "100%", backgroundColor: "#21D4FD", backgroundImage: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"}}>
         <div className="bar">
-            <Toolbar> 
+            <Toolbar sx = {{position : 'absolute'}}> 
                 <IconButton
                 size="large"
                 edge="start"
@@ -69,7 +72,7 @@ const NewMenu = () => {
         </div>
         {isAuth() ? 
               <Link to = '/profile' className="avatarHeader">
-                <h2>{user.userName}</h2>
+                {!media ? <h2>{user.userName}</h2> : <></>}
                 <Avatar src  ={user.avatar} sx ={{height : "4vh", width : "4vh"}}/> 
               </Link>
               : <></>

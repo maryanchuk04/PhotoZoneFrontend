@@ -16,7 +16,7 @@ const PlaceComponent = ({place}) => {
         <div className="rating">
             <Rating
                 name="simple-controlled"
-                value={place.rating}    
+                value={place.rate}    
                 readOnly
             />
         </div>

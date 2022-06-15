@@ -1,0 +1,56 @@
+.activities{
+    width: 100%;
+    min-height: 100%;
+    overflow: scroll;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.activityPlace{
+    height: fit-content;
+}
+
+.activityPlace .title h1{
+    font-size: 24px;
+    margin: 10px 0 ;
+    color: #444;
+    text-shadow: -1px 0px 0px rgba(76, 0, 255, 0.3);
+    
+}
+
+.activityPlace .main .image{
+    width: 100%;
+    height: 100%;
+
+}
+
+.activityPlace .main .image .img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+
+.activityPlace .main{
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+
+.activityPlace .main .info{
+    font-size: 18px;
+
+}
+
+.main .info .location{
+    margin-top: 10px;
+}

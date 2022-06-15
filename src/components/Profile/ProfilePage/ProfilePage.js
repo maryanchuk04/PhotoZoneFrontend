@@ -28,8 +28,8 @@ const ProfilePage = () => {
         <div className="profile_page">
             <div className="profile_container">
                 <div className="container">
-                <ProfileMenu user = {user}/>
-                <AboutBlock user = {user}/>
+                    <ProfileMenu user = {user}/>
+                    <AboutBlock id = {id} user = {user}/>
                 </div>
             </div>
         </div>

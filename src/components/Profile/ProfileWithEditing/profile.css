@@ -50,6 +50,7 @@
     height: 100%;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     text-align: left;
+    position: relative;
 }
 .generalInfo .generalInfoContainer{
     width: 90%;
@@ -88,22 +89,23 @@
 }
 
 .generalInfo .generalInfoContainer .editfield .changeEmail{
-    margin: 20px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 .editfield .changePassword  button{
-    margin-top: 10px;
+    margin: 10px 0;
 }
 .editfield .changeEmail button {
-    margin-top: 10px;
+    margin: 10px 0;
+    height: 100%;
 }
 
 .generalInfo .generalInfoContainer .editfield .changePassword{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 35% 35% 1fr;
     width: 100% ;
+    grid-gap: 20px;
 }
 
 
@@ -130,9 +132,7 @@
     width: 100%;
     height: 100%;
 }
-.socials .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-    width: 70%;
-}
+
 .socials .btns{
     display: flex;
     margin: 0 auto;
@@ -150,4 +150,17 @@
     display: flex;
     margin: auto auto;
     height: 90%;
+}
+
+.emLine{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 60% 1fr;
+    grid-gap: 20px;
+}
+
+.generalInfo .save{
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }

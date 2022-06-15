@@ -5,6 +5,8 @@ import UserService from '../../Services/UserService'
 import { getErrorMessage } from '../../Services/Helpers';
 import AlertWrapper from '../Shared/Alert/AlertWrapper';
 import { useNavigate } from "react-router-dom";
+import GoogleLoginButton from './GoogleLogin';
+import GoogleLogin from 'react-google-login';
 
 const userServise = new UserService();
 
@@ -62,6 +64,34 @@ const LoginForm = (props) => {
         })
     }
 
+    const googleLogin = (response) =>{
+        console.log(response);
+        console.log(response.profileObj);
+        const data = {
+            email : response?.profileObj?.email,
+            avatar : response?.profileObj?.imageUrl,
+            userName : response?.profileObj?.name
+        }
+        console.log(data)
+        userServise.googleLogin(data).then((res)=>{
+            console.log(res);
+            if (res.status !== 200){
+                setIsAlert(true)
+                setAlertMessage(res.data.error)
+               
+            }
+            
+            if(res.status === 200){
+                localStorage.setItem("token", JSON.stringify(res.data));
+                navigate("/profile")
+                props.onClose();
+            }   
+        }).catch((err)=>{
+           console.log(err)
+        })
+       
+    }
+
     const alertClose = () =>{
         setIsAlert(false);
     }
@@ -85,11 +115,22 @@ const LoginForm = (props) => {
             <div class='title'>or</div>
             <div class='line'></div>
         </section>
-        <button id = 'GoogleButton'>
-            <div className="line2">
-                <img src="https://img.icons8.com/color/344/google-logo.png" alt="" id="googleIcon"/>Continue with Google
-            </div>
-        </button>
+        <GoogleLogin
+            clientId="970054821358-csu9i12dkd45asv2prhjh6htcsifrhmj.apps.googleusercontent.com"
+            buttonText="Login"
+            render={(renderProps) => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled} id = 'GoogleButton'>
+                    <div className="line2">
+                        <img src="https://img.icons8.com/color/344/google-logo.png" alt="" id="googleIcon"/>Continue with Google
+                    </div>
+                </button>
+            )}
+            
+            onSuccess={googleLogin}
+            isSingnedIn={true}
+            onFailure={googleLogin}
+            cookiePolicy={'single_host_origin'}/>
+        
     </form>
     
     </>

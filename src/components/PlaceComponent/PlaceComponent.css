@@ -9,7 +9,14 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    height: inherit;
+    width: 100%;
 }
+
+.title h2{
+    white-space :normal;
+}
+
 
 .popup_component .image{
     width: 100%;

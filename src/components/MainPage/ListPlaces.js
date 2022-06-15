@@ -32,7 +32,7 @@ const ListPlaces = ({locationLoad,center, loading}) => {
             <div className="title">
                 <h2>All places on Map!</h2>
             </div>
-            {locationLoad ? <ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/> :  
+            {locationLoad ?  <div className = "loader"><ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/></div> :  
             <div className="list">
                 {
                     places?.map((element)=>(
