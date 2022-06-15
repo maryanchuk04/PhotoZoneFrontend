@@ -116,7 +116,7 @@ const LoginForm = (props) => {
             <div class='line'></div>
         </section>
         <GoogleLogin
-            clientId="970054821358-csu9i12dkd45asv2prhjh6htcsifrhmj.apps.googleusercontent.com"
+            clientId="898187581146-9rq8rn71544fu2r60nb2cfg0t4vi1i4l.apps.googleusercontent.com"
             buttonText="Login"
             render={(renderProps) => (
                 <button onClick={renderProps.onClick} disabled={renderProps.disabled} id = 'GoogleButton'>
