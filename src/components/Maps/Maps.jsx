@@ -48,7 +48,7 @@ const Maps = (props) => {
 
   return (
       props.center &&
-      <MapContainer  center={props.center} zoom={props.zoom === undefined ? 15 : props.zoom } scrollWheelZoom = {true} >
+      <MapContainer  center={props.center} zoom={props.zoom === undefined ? 15 : props.zoom } scrollWheelZoom = {false} >
         <ChangeView  center={props.center} zoom={props.zoom === undefined ? 15 : props.zoom }/>
         <TileLayer 
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

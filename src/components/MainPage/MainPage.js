@@ -68,7 +68,6 @@ const MainPage = () => {
               <Link to = '/newlocation'><ButtonsAddNewLocation/></Link>
           </div>
 
-          <ListPlaces locationLoad ={locationLoad} center ={center} loading = {loadingDistance}/>
     </div>
   )
 }

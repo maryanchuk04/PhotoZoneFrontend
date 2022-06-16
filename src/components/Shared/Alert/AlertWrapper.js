@@ -6,17 +6,19 @@ import CloseIcon from '@mui/icons-material/Close';
 const AlertWrapper = (props) => {
 
   return <Alert action ={<IconButton
-      aria-label="close"
-      color="error"
-      size="small"
-      onClick={() => {
-        props.close();
-      }}
-      
-    >
-      <CloseIcon fontSize="inherit" />
-    </IconButton> }  sx ={{position: "absolute", bottom: 0, left : 0}} severity ='error'>{props.children}</Alert>
+        aria-label="close"
+        color={props.color}
+        size="small"
+        onClick={() => {
+          props.close();
+        }}
+        
+      >
+        <CloseIcon fontSize="inherit" />
+      </IconButton> }  sx ={{position: "absolute", bottom: "10px", left : "5px", width : "200px"}} severity ='error'>{props.children}</Alert>
 
+
+   
  
 }
 

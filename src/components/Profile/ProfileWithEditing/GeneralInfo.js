@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { TextField,Select, Button, IconButton } from '@mui/material'
 import './profile.css'
+import '../../../custom.css'
 import { DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { MenuItem } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import UserService from '../../../Services/UserService';
+import AlertWrapper from '../../Shared/Alert/AlertWrapper';
 
 const GeneralInfo = ({userData}) => {
     const [date, setDate]=useState(userData.birthday);
+    const [showAlert, setShowAlert] = useState(false);
     console.log(userData)
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -37,6 +40,9 @@ const GeneralInfo = ({userData}) => {
         console.log(data);
         service.SaveUserInfo(data).then((res)=>{
             console.log(res.data);
+            if (res.status === 200){
+                setShowAlert(true);
+            }
         })
     }
 
@@ -163,9 +169,11 @@ const GeneralInfo = ({userData}) => {
                             <Button variant="contained" sx={{heigth : "100%"}}>Change Password</Button>
                         </div>
                     </div>
-            
-                
-
+                    {/* {
+                        showAlert ? <div className = "alert">
+                                <AlertWrapper color  = {"error"}>Save done!</AlertWrapper>
+                            </div> : <></>
+                    } */}
         </div>
     </div>
   )
