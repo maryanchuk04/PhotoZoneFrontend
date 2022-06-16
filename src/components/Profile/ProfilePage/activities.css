@@ -35,6 +35,15 @@
 }
 
 
+.activities .withoutPlace {
+    height: fit-content;
+}
+.activities .withoutPlace h1{
+    margin: auto;
+    text-align: center;
+}
+
+
 
 .activityPlace .main{
     display: grid;
@@ -53,4 +62,12 @@
 
 .main .info .location{
     margin-top: 10px;
+}
+
+
+
+@media screen and (max-width : 426px) {
+   .activities{
+       height: fit-content;
+   }
 }

@@ -16,6 +16,7 @@ const SubscribersBox = (props) => {
     
     
     useEffect(()=>{
+        console.log(items);
         if(items?.lendth !== 0){
             items?.forEach(elem => {
                 guids.push(elem.subscribeId);

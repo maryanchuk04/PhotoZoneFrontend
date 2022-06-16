@@ -41,3 +41,18 @@
     width: 90%;
     margin: auto !important;
 }
+
+
+@media screen and (max-width : 426px) {
+    .usersPage{
+        width: 95%;
+        max-height: 90%;
+    }
+
+    .usersPage .search{
+        height: 80px;
+    }
+    .usersPage .users{
+        height: 50vh;
+    }
+}

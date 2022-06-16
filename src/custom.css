@@ -1,28 +1,18 @@
-
-html{
-    height: -webkit-fill-available;
-}
 .all{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
     min-height: 100vh; 
-    position: relative;
 }
 .leaflet-container{
     height: 94vh;
 }
 
-.alert{
-    position: absolute;
-}
-
 *{
     font-family: 'Mukta', sans-serif;
     margin: 0;
-    box-sizing: border-box;
-    
+   
 }
 a{
     cursor: pointer;
@@ -35,47 +25,12 @@ a{
     flex-direction: column;
     justify-content: space-between; 
     min-height: 100vh;
-    
 }
 body{
-    margin: 0;
-    height: calc(100vh - 110px);
-    min-height: -webkit-fill-available;
-    padding: 0;
-    overflow: hidden;
+    min-height: 100%;
 }
 
 .container{
     width: 80%;
     margin: 0 auto;
-}
-
-.css-6v349o:after, .css-6v349o:before{
-    background-color: #A254FF;
-}
-
-@media screen and (max-width : 426px) {
-    .App{
-        overflow: hidden;
-        height: calc(100vh - 110px);
-        height: -webkit-fill-available;
-    }
-    .App .all{
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        width: 100%;
-        height: calc(100vh - 110px);
-        position: relative;
-        min-height: calc(100vh - 110px);
-        
-        max-height: calc(100vh - 110px);
-        height: -webkit-fill-available;
-    }
-    .leaflet-container{
-        height: calc(94vh - 110px);
-    }
-
-
-
 }

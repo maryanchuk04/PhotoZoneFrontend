@@ -31,3 +31,18 @@
     cursor: pointer;
     color: #050564;
 }
+
+
+@media screen and (max-width : 426px) {
+    .footer_container {
+        width: 95%;
+    }
+
+    .footer_container img{
+        height: 50%;
+    }
+
+    .footer_container .footer_socials{
+        width: 40%;
+    }
+}

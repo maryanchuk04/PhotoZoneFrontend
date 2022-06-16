@@ -17,14 +17,10 @@ const ActivitiesInfo = ({id,user}) => {
   },[])
   return (
     <div className = "activities">
-      
-      
      <h1>User`s activities</h1>
-      
       {
-        places?.length === 0 ? <h1 style ={{margin: "auto", textAlign: "center"}}>There are currently no activities...</h1>
+        places?.length === 0 ?<div className = "withoutPlace"><h1>There are currently no activities...</h1></div> 
          : places?.map((place)=> <PlaceActivity place ={place}/>)
-
       }
     </div>
   )

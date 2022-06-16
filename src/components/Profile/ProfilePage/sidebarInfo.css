@@ -38,3 +38,28 @@
     font-size: 40px;
 }
 
+
+
+@media screen and (max-width : 426px) {
+    .sidebarInfoContainer{
+        overflow-y: unset;
+        height: fit-content;
+        
+    }
+    .sidebarInfoContainer .information_about_user{
+        overflow:unset;
+    }
+    .information_about_user .fullName{
+        font-size: 25px;
+    }
+    .information_about_user .birthday{
+        font-size: 22px;
+    }
+    .information_about_user .phoneNumber{
+        font-size: 22px;
+    }
+    .information_about_user h2 {
+        font-size: 24px;
+    }
+
+}

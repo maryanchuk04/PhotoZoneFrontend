@@ -21,6 +21,8 @@ import { gapi } from 'gapi-script'
 
 function App() {
   useEffect(()=>{
+
+    document.body.style.height = window.innerHeight + "px"
     function start(){
       gapi.client.init({
         clientId : "898187581146-9rq8rn71544fu2r60nb2cfg0t4vi1i4l.apps.googleusercontent.com",

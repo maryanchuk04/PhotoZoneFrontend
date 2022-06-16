@@ -15,7 +15,7 @@
     background-size: cover;
     border-radius: 30px;
 }
-.profile_preview img{
+.profile_preview .kartinka img{
     z-index: 0;
     height: 300px;
     width: 100%;
@@ -120,3 +120,32 @@
 
 }
 
+
+
+@media screen and (max-width : 426px) {
+    .profile_preview .kartinka img{
+        height: 150px;
+    }
+    .avatar-with-menu .username_menu h1{
+        font-size: 18px;
+       
+    }
+
+    .profile_preview .avatar-with-menu{
+        height: fit-content;
+        margin: -56px auto 0;
+    }
+    .avatar-with-menu .username_menu{
+        margin-left: 10px;
+        justify-content: space-between;
+    }
+    .profile_info p {
+        font-size: 16px !important;
+    }
+
+    .profile_container .container{
+        width: 95%;
+    }
+
+
+}

@@ -51,3 +51,12 @@
     color : white;
     font-size: 26px;
 }
+
+
+
+@media screen and (max-width : 426px) {
+    .sidebarInfo li{
+        height: 50px;
+        font-size: 15px;
+    }
+}
