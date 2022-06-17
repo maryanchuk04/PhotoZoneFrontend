@@ -14,6 +14,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
 import { ClockLoader } from 'react-spinners';
 import { uploadImage } from '../../Services/ImageUploader';
+import useMedia from 'use-media';
 
 
 const Place = ({place, user}) => {
@@ -24,6 +25,8 @@ const Place = ({place, user}) => {
     const [comments, setComments] = useState(place?.comments);
 
     const [commentField, setCommentField] = useState("");
+
+    const media  = useMedia({maxWidth : "426px"})
     useEffect(()=>{
         console.log(place)
     },[])
@@ -123,10 +126,13 @@ const Place = ({place, user}) => {
                 </div>
                 <form className="writeComment" onSubmit = {(e)=>SendComment(e)}>
                     <Avatar src = {user.avatar} alt={user.userName} sx={{ width: 60, height: 60 }}/>
-                    <TextField variant = "outlined" sx ={{width : "100%"}} placeholder = {"Write your comment..."} value = {commentField} onChange = {(e)=>setCommentField(e.target.value)}/>
-                    <Button variant="contained" endIcon={<SendIcon />} sx ={{width : "100%"}} type = 'submit' >
+                    <TextField variant = "outlined" sx ={{width : "100%"}} placeholder = {"Write your comment..."} value = {commentField} onChange = {(e)=>setCommentField(e.target.value)} required/>
+                    {!media ? 
+                        <Button variant="contained" endIcon={<SendIcon />} sx ={{width : "100%"}} type = 'submit' >
                         Send
-                    </Button>
+                    </Button> : 
+                    <Button variant="contained" endIcon={<SendIcon />} sx ={{height : "100%", width : "80%", margin : "0 auto"}} type = 'submit' >
+                    </Button>}
                 </form>
                 <div className="listComments">
                 {

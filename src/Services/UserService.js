@@ -42,4 +42,6 @@ export default class UserService{
 
     googleLogin = (data) => base_service.setToken('User/GoogleLogin', data);
 
+    sendFeedback = (data) =>base_service.setResource('User/SendFeedback',data);
+
 }

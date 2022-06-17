@@ -17,7 +17,6 @@
 a{
     cursor: pointer;
     text-decoration: none !important;
-    color : white ;
 }
 
 .App{
@@ -33,4 +32,9 @@ body{
 .container{
     width: 80%;
     margin: 0 auto;
+}
+
+
+.avatarHeader h2 {
+    color: white;
 }

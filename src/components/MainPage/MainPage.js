@@ -11,6 +11,8 @@ import {LatLng} from "leaflet/dist/leaflet-src.esm";
 import SearchLocationButton from "../Shared/Buttons/SearchLocationButton";
 import ListPlaces from './ListPlaces';
 import PlaceService from '../../Services/PlaceService';
+import { Login } from '../Login/Login';
+import useMedia from 'use-media';
 
 
 const defaultcenter = {
@@ -22,8 +24,13 @@ const MainPage = () => {
     const [loadingDistance, setLoadingDistance] = useState(true);
     const [places, setPlaces] = useState([]);
     const [center, setcenter] = useState(defaultcenter)
-    const [isOpen,setIsOpen] = useState(false);
+    const [isOpen,setIsOpen] = useState(true);
     const [locationLoad,setLocationLoad] = useState(true);
+    const media = useMedia({maxWidth : "426px"});
+
+    const close = ()=>{
+        setIsOpen(false);
+    }
 
     let service = new PlaceService();
 
@@ -35,6 +42,9 @@ const MainPage = () => {
            setTimeout(()=>setcenter(center2),1000);
     }
     useEffect(()=>{
+        if(localStorage.getItem("token") !== null && localStorage.getItem("token")!== undefined){
+          setIsOpen(false)
+        }
         getBrowserLocation().then((curLocation)=>{
             service.getAllPlaces().then((res)=>{
               setPlaces(res.data)
@@ -67,7 +77,11 @@ const MainPage = () => {
               <ButtonMyLocation currentLocation = {center} setCurrentLocation ={setCurrentLocation} />
               <Link to = '/newlocation'><ButtonsAddNewLocation/></Link>
           </div>
+          {
+                    isOpen ? <Login isOpen ={isOpen} onClose ={close}/> : <></>
+          }
 
+          {!media ? <ListPlaces locationLoad = { locationLoad} center = {center} loading ={loadingDistance}/>: <></>}
     </div>
   )
 }

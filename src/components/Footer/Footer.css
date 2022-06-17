@@ -45,4 +45,8 @@
     .footer_container .footer_socials{
         width: 40%;
     }
+
+    .footer_socials i {
+        font-size: 30px;
+    }
 }

@@ -117,10 +117,12 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .profileEdit .socials .social_line{
+    width: 90%;
     height: 45px;
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
+    display: grid;
+    grid-template-columns : 30% 1fr;
+    
+    margin: 20px auto;
     
 }
 .social_line .icon{
@@ -130,7 +132,7 @@
 }
 .social_line .icon img{
     width: 100%;
-    height: 100%;
+    height: 60px;
 }
 
 .socials .btns{
@@ -171,5 +173,23 @@
     .profileContainer{
         width: 95%;
         grid-template-columns: 1fr;
+    }
+    .profileEdit .socials .social_line{
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin:20px 0;
+        
+    }
+    .changeEmail .emLine{
+        display: grid;
+        align-items: center;
+        grid-template-columns:1fr;
+        grid-gap: 20px;
+    }
+
+    .generalInfo .generalInfoContainer .editfield .changePassword{
+        grid-template-columns: 50% 50%;
+        
     }
 }

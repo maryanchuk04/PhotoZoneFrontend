@@ -10,9 +10,12 @@ const UsersPage = () => {
 
   const [users, setUsers] = useState([]);
   let userService = new UserService();
-
+  const [isauth, setIsauth] = useState(true);
 
   useEffect(() => {
+    if (localStorage.getItem("token") === null || localStorage.getItem("token") === undefined){
+      setIsauth(false);
+    }
     userService.GetAllUsers().then(res =>{
       console.log(res);
       setUsers(res.data);
@@ -42,7 +45,7 @@ const UsersPage = () => {
         <div className="users">
           {loading ? <div className = "loader"><ClockLoader size= "150" css = {{margin : "auto" }} color={"#A254FF"}/></div> : 
             <div className = "userList">
-                <UsersList users = {users}/>
+                <UsersList users = {users} isAuth = {isauth}/>
             </div>
             
           }

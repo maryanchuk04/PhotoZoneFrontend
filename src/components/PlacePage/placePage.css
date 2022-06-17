@@ -172,3 +172,37 @@
     display: flex;
     flex-direction: column;
 }
+
+
+@media screen and (max-width : 426px) {
+    .placePage{
+        width: 95%;
+    }
+
+    .onePlace .mainInfo{
+        grid-template-columns: 100%;
+    }
+    .gal .slick-track img{
+        height: 200px;
+    }
+    .onePlace .uploadNewImage{
+        width: 90%;
+
+    }
+    .onePlace .comments{
+
+    }
+
+    .onePlace .comments .writeComment{
+        grid-template-columns: 60px 60% 1fr;
+        grid-gap: 3px !important;
+        align-items: center;
+    }
+
+    .writeComment button{
+        border-radius: 50%;
+    }
+    .writeComment button span{
+        margin: 0 ;
+    }
+}

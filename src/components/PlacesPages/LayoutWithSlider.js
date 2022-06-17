@@ -29,8 +29,8 @@ const LayoutWithSlider = ({places}) => {
                   <h1>{place.title}</h1>
                   <p className = "desk">{place.description}</p>
                   
-                  <p className = "loca">Location : {place.location.locationString}</p>
-                  <Rating value = {place.rating} readOnly/>
+                  <p className = "loca">Location : {place.location.locationName}</p>
+                  <Rating value = {place.rate} readOnly/>
                   <Button variant = "text" className="more" onClick = {()=> navigate(`/place/${place.id}`)}>More</Button>
               </div>
           </div>

@@ -14,12 +14,13 @@ export const Login = ({isOpen, onClose}) => {
   return (
     <div>
         <Dialog
+        sx ={{padding : 0}}
         fullWidth={fullWidth}
         maxWidth={maxWidth}
         open={isOpen}
         onClose={onClose} 
       >
-        <DialogContent>
+        <DialogContent sx ={{padding : 0}}>
             <div className="login_content">
                 <AboutWebSite/>
                 <LoginForm onClose={onClose}/>

@@ -1,4 +1,4 @@
-import React,{ReactFragment, useEffect} from 'react';
+import React,{ReactFragment, useEffect, useState} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import MainPage from './components/MainPage/MainPage.js';
 import Menu from "./components/Shared/Menu/Menu";
@@ -12,16 +12,16 @@ import SupportPage from './components/Support/SupportPage.js';
 import NewMenu from './components/Shared/Menu/NewMenu.js';
 import Profile from './components/Profile/ProfileWithEditing/profile.js';
 import { isAuth } from './Services/SharedFunctions.js';
-import { useNavigate } from 'react-router';
+
 import SubscribersPage from './components/Subscribers/SubscribersPage.js';
 import UsersPage from './components/UsersPage/UsersPage.js';
 import PlacesPage from './components/PlacesPages/PlacesPage'
 import PlacePage from './components/PlacePage/PlacePage.js';
 import { gapi } from 'gapi-script'
 
-function App() {
+function App() {  
   useEffect(()=>{
-
+    
     document.body.style.height = window.innerHeight + "px"
     function start(){
       gapi.client.init({

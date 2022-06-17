@@ -14,6 +14,9 @@ const SubscribersPage = () => {
     const [value, setValue] = useState(0);
 
     useEffect(()=>{
+        if (localStorage.getItem("token") === null ){
+            window.location = '/'
+        }
         service.GetCurrentUserInfo().then((res)=>{
             setUser(res.data);
             console.log(res.data)

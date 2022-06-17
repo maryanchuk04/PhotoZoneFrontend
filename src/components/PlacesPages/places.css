@@ -95,3 +95,28 @@
 .place_tabs{
 
 }
+
+
+
+
+
+@media screen and (max-width : 426px) {
+    .places{
+        width: 95%;
+    }
+    .place_list .slider .place_slider{
+        grid-template-columns: 1fr;
+    }
+
+    .slider .place_slider .image{
+       display: none;
+    }
+
+    .slider{
+        overflow-x: hidden;
+    }
+    .place_slider .information{
+        height: fit-content;
+        overflow: hidden;
+    }
+}
